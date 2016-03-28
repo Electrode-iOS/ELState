@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+@objc
+public protocol Subscriber {
+    func newState(state: State)
+}

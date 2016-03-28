@@ -8,7 +8,10 @@
 
 import Foundation
 
-@objc
-public protocol Action {
-    // we just want to define this
+public protocol ActionType {
+    var data: Any { get }
+}
+
+public struct InitAction: ActionType {
+    public var data: Any { return "" }
 }

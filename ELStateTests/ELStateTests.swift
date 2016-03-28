@@ -9,16 +9,35 @@
 import XCTest
 @testable import ELState
 
-class ELStateTests: XCTestCase {
+struct blah {
+    let v: Int
+}
+
+class ELStateTests: XCTestCase, Subscriber {
+    
+    //let store = Store(MyState())
+    var state = State()
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        //store.subscribe(self)
+        
+        let b = blah(v: 22)
+        
+        state.setValue(b, forKey: "blah")
     }
     
     override func tearDown() {
+        //store.unsubscribe(self)
+
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func newState(state: State) {
+        //
+        //state.
     }
     
     func testExample() {

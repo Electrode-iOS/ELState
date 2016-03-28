@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+public protocol Reducer {
+    func handleAction(state: State?, actionType: ActionType) -> State?
+}

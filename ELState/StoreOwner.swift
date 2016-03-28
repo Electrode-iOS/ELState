@@ -1,5 +1,5 @@
 //
-//  StateOwner.swift
+//  StoreOwner.swift
 //  ELState
 //
 //  Created by Brandon Sneed on 3/27/16.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol StateOwner {
+public protocol StoreOwner {
     var store: Store? { get }
 }

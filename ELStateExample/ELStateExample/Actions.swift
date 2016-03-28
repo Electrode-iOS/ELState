@@ -1,5 +1,5 @@
 //
-//  SwitchActions.swift
+//  Actions.swift
 //  ELStateExample
 //
 //  Created by Brandon Sneed on 3/27/16.
@@ -14,5 +14,9 @@ struct Switch1Action: ActionType {
 }
 
 struct Switch2Action: ActionType {
+    var data: Any
+}
+
+struct TextAction: ActionType {
     var data: Any
 }
