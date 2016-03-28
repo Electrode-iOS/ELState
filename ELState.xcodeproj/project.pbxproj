@@ -10,6 +10,11 @@
 		CA69BCC41CA7BBD300204B18 /* ELState.h in Headers */ = {isa = PBXBuildFile; fileRef = CA69BCC31CA7BBD300204B18 /* ELState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA69BCCB1CA7BBD300204B18 /* ELState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA69BCC01CA7BBD300204B18 /* ELState.framework */; };
 		CA69BCD01CA7BBD300204B18 /* ELStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCCF1CA7BBD300204B18 /* ELStateTests.swift */; };
+		CA69BCDB1CA7BBF800204B18 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDA1CA7BBF800204B18 /* Action.swift */; };
+		CA69BCDD1CA7BCC000204B18 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */; };
+		CA69BCDF1CA7BD5A00204B18 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDE1CA7BD5A00204B18 /* Store.swift */; };
+		CA69BCE11CA7BDFC00204B18 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCE01CA7BDFC00204B18 /* Reducer.swift */; };
+		CA69BCE51CA7D8D400204B18 /* StoreOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCE41CA7D8D400204B18 /* StoreOwner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +34,11 @@
 		CA69BCCA1CA7BBD300204B18 /* ELStateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELStateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA69BCCF1CA7BBD300204B18 /* ELStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELStateTests.swift; sourceTree = "<group>"; };
 		CA69BCD11CA7BBD300204B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA69BCDA1CA7BBF800204B18 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
+		CA69BCDE1CA7BD5A00204B18 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		CA69BCE01CA7BDFC00204B18 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		CA69BCE41CA7D8D400204B18 /* StoreOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOwner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,11 @@
 			children = (
 				CA69BCC31CA7BBD300204B18 /* ELState.h */,
 				CA69BCC51CA7BBD300204B18 /* Info.plist */,
+				CA69BCDA1CA7BBF800204B18 /* Action.swift */,
+				CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */,
+				CA69BCDE1CA7BD5A00204B18 /* Store.swift */,
+				CA69BCE41CA7D8D400204B18 /* StoreOwner.swift */,
+				CA69BCE01CA7BDFC00204B18 /* Reducer.swift */,
 			);
 			path = ELState;
 			sourceTree = "<group>";
@@ -194,6 +209,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA69BCDF1CA7BD5A00204B18 /* Store.swift in Sources */,
+				CA69BCE51CA7D8D400204B18 /* StoreOwner.swift in Sources */,
+				CA69BCDB1CA7BBF800204B18 /* Action.swift in Sources */,
+				CA69BCE11CA7BDFC00204B18 /* Reducer.swift in Sources */,
+				CA69BCDD1CA7BCC000204B18 /* Subscriber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,28 +330,33 @@
 		CA69BCD51CA7BBD300204B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ELState/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELState;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		CA69BCD61CA7BBD300204B18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ELState/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELState;
 				PRODUCT_NAME = "$(TARGET_NAME)";
