@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc
+//@objc
 public protocol Subscriber {
     func newState(state: State)
 }

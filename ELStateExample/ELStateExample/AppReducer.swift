@@ -10,14 +10,16 @@ import Foundation
 import ELState
 
 
-class AppState: State {
+public class AppState: State, HasSwitchStates, HasTextState {
     var switch1: Bool = false
     var switch2: Bool = false
     var someText: String = ""
 }
 
-public class AppReducer: Reducer {
-    public func handleAction(state: State?, actionType: ActionType) -> State? {
+class AppReducer: Reducer {
+    typealias StateType = AppState
+    
+    func handleAction(state: AppState, actionType: ActionType) -> AppState {
         var newState = state
         
         switch(actionType) {
@@ -31,21 +33,19 @@ public class AppReducer: Reducer {
             break
             
         case is Switch1Action:
-            newState = SwitchReducer().handleAction(state, actionType: actionType)
+            newState = SwitchReducer().handleAction(state, actionType: actionType) as! StateType
             
         case is Switch2Action:
-            newState = SwitchReducer().handleAction(state, actionType: actionType)
+            newState = SwitchReducer().handleAction(state, actionType: actionType) as! StateType
             
         case is TextAction:
-            newState = TextReducer().handleAction(state, actionType: actionType)
+            newState = TextReducer().handleAction(state, actionType: actionType) as! StateType
             
         default:
             break
         }
         
-        if let appState = newState as? AppState {
-            print("State = {\ntext: \(appState.someText)\nswitch1: \(appState.switch1)\nswitch2: \(appState.switch2)\n}")
-        }
+        print("State = {\ntext: \(newState.someText)\nswitch1: \(newState.switch1)\nswitch2: \(newState.switch2)\n}")
         
         return newState
     }

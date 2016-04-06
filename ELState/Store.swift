@@ -8,9 +8,8 @@
 
 import Foundation
 
-//public typealias State = NSDictionary
-@objc
-public protocol State {
+//@objc
+public protocol State: AnyObject {
     
 }
 
@@ -23,7 +22,7 @@ public class Store: NSObject {
         }
     }
     
-    public init(reducer: Reducer) {
+    public init(reducer: BaseReducer) {
         self.reducer = reducer
         super.init()
         
@@ -32,19 +31,14 @@ public class Store: NSObject {
     }
     
     public func subscribe(s: Subscriber) {
-        if listeners.containsObject(s) {
-            // this guy is already a subscriber, ignore him, he's drunk.
-            return
-        } else {
-            listeners.addObject(s)
-            if let currentState = state {
-                s.newState(currentState)
-            }
+        listeners.append(s)
+        if let currentState = state {
+            s.newState(currentState)
         }
     }
     
     public func unsubscribe(s: Subscriber) {
-        listeners.removeObject(s)
+        //listeners = listeners.filter({ $0 != s })
     }
     
     public func dispatch(action: ActionType) {
@@ -58,10 +52,10 @@ public class Store: NSObject {
         isDispatching = true
         
         // get the state
-        _state = reducer.handleAction(state, actionType: action)
+        _state = reducer._handleAction(state, actionType: action)
         // dispatch it to all subscribers.
         if let state = state {
-            let currentListeners = listeners.allObjects
+            let currentListeners = listeners
             currentListeners.forEach {
                 $0.newState(state)
             }
@@ -77,8 +71,8 @@ public class Store: NSObject {
     
     // we want a weak hold on any listeners in case they forget
     // to unsubscribe.
-    private var listeners = NSHashTable.weakObjectsHashTable()
+    private var listeners = [Subscriber]()//NSHashTable.weakObjectsHashTable()
     // the main reducer for the application.
-    private var reducer: Reducer
+    private var reducer: BaseReducer
 
 }

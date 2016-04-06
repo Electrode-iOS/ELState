@@ -9,25 +9,29 @@
 import Foundation
 import ELState
 
+protocol HasSwitchStates: State {
+    var switch1: Bool { get set }
+    var switch2: Bool { get set }
+}
+
 class SwitchReducer: Reducer {
-    func handleAction(state: State?, actionType: ActionType) -> State? {
-        guard let state = state as? AppState else {
-            assertionFailure()
-            return nil
-        }
+    typealias StateType = HasSwitchStates
+    
+    func handleAction(state: StateType, actionType: ActionType) -> StateType {
+        let newState = state
         
         switch(actionType) {
         case is InitAction:
-            state.switch1 = true
-            state.switch2 = false
+            newState.switch1 = true
+            newState.switch2 = false
             break
             
         case is Switch1Action:
-            state.switch1 = (actionType.data as! Bool)
+            newState.switch1 = (actionType.data as! Bool)
             break
 
         case is Switch2Action:
-            state.switch2 = (actionType.data as! Bool)
+            newState.switch2 = (actionType.data as! Bool)
             break
             
             
@@ -35,28 +39,31 @@ class SwitchReducer: Reducer {
             break
         }
         
-        // we couldn't do anything, so just return what came in.
-        return state
+        return newState
     }
 }
 
+protocol HasTextState: State {
+    var someText: String { get set }
+}
+
 class TextReducer: Reducer {
-    func handleAction(state: State?, actionType: ActionType) -> State? {
-        guard let state = state as? AppState else {
-            assertionFailure()
-            return nil
-        }
+    typealias StateType = HasTextState
+    
+    func handleAction(state: StateType, actionType: ActionType) -> StateType {
+        let newState = state
         
         switch(actionType) {
+        case is InitAction:
+            newState.someText = ""
         case is TextAction:
-            state.someText = actionType.data as! String
+            newState.someText = actionType.data as! String
             break
             
         default:
             break
         }
         
-        // we couldn't do anything, so just return what came in.
-        return state
+        return newState
     }
 }
