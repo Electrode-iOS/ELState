@@ -8,10 +8,6 @@
 
 import Foundation
 
-public protocol State {
- 
-}
-
 @objc
 public class Store: NSObject {
     public var state: State? {
@@ -33,7 +29,7 @@ public class Store: NSObject {
     public func subscribe(s: Subscriber) {
         listeners.append(s)
         if let currentState = state {
-            s.newState(currentState)
+            s.newState(currentState, store: self)
         }
     }
     
@@ -52,12 +48,12 @@ public class Store: NSObject {
         isDispatching = true
         
         // get the state
-        _state = reducer._handleAction(state, actionType: action)
+        _state = reducer._handleAction(action, state: state)
         // dispatch it to all subscribers.
         if let state = state {
             let currentListeners = listeners
             currentListeners.forEach {
-                $0.newState(state)
+                $0.newState(state, store: self)
             }
         }
         

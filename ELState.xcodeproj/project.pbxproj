@@ -15,6 +15,7 @@
 		CA69BCDF1CA7BD5A00204B18 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDE1CA7BD5A00204B18 /* Store.swift */; };
 		CA69BCE11CA7BDFC00204B18 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCE01CA7BDFC00204B18 /* Reducer.swift */; };
 		CA69BCE51CA7D8D400204B18 /* StoreOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCE41CA7D8D400204B18 /* StoreOwner.swift */; };
+		CAD232B51CB6D8AE00BBA021 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD232B41CB6D8AE00BBA021 /* State.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		CA69BCDE1CA7BD5A00204B18 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		CA69BCE01CA7BDFC00204B18 /* Reducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		CA69BCE41CA7D8D400204B18 /* StoreOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreOwner.swift; sourceTree = "<group>"; };
+		CAD232B41CB6D8AE00BBA021 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				CA69BCC31CA7BBD300204B18 /* ELState.h */,
 				CA69BCC51CA7BBD300204B18 /* Info.plist */,
+				CAD232B41CB6D8AE00BBA021 /* State.swift */,
 				CA69BCDA1CA7BBF800204B18 /* Action.swift */,
 				CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */,
 				CA69BCDE1CA7BD5A00204B18 /* Store.swift */,
@@ -214,6 +217,7 @@
 				CA69BCDB1CA7BBF800204B18 /* Action.swift in Sources */,
 				CA69BCE11CA7BDFC00204B18 /* Reducer.swift in Sources */,
 				CA69BCDD1CA7BCC000204B18 /* Subscriber.swift in Sources */,
+				CAD232B51CB6D8AE00BBA021 /* State.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +407,7 @@
 				CA69BCD61CA7BBD300204B18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA69BCD71CA7BBD300204B18 /* Build configuration list for PBXNativeTarget "ELStateTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +416,7 @@
 				CA69BCD91CA7BBD300204B18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -10,5 +10,5 @@ import Foundation
 
 //@objc
 public protocol Subscriber {
-    func newState(state: State)
+    func newState(state: State, store: Store)
 }
