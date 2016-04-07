@@ -17,21 +17,21 @@ public protocol HasSwitchStates: State {
 class SwitchReducer: Reducer {
     typealias StateType = HasSwitchStates
     
-    func handleAction(state: StateType, actionType: ActionType) -> StateType {
+    func handleAction(action: ActionType, state: StateType) -> StateType {
         var newState = state
         
-        switch(actionType) {
+        switch(action) {
         case is InitAction:
             newState.switch1 = true
             newState.switch2 = false
             break
             
         case is Switch1Action:
-            newState.switch1 = (actionType.data as! Bool)
+            newState.switch1 = (action.data as! Bool)
             break
 
         case is Switch2Action:
-            newState.switch2 = (actionType.data as! Bool)
+            newState.switch2 = (action.data as! Bool)
             break
             
             
@@ -50,14 +50,14 @@ protocol HasTextState: State {
 class TextReducer: Reducer {
     typealias StateType = HasTextState
     
-    func handleAction(state: StateType, actionType: ActionType) -> StateType {
+    func handleAction(action: ActionType, state: StateType) -> StateType {
         var newState = state
         
-        switch(actionType) {
+        switch(action) {
         case is InitAction:
             newState.someText = ""
         case is TextAction:
-            newState.someText = actionType.data as! String
+            newState.someText = action.data as! String
             break
             
         default:

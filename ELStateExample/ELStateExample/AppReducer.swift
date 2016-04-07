@@ -19,27 +19,27 @@ class AppState: State, HasSwitchStates, HasTextState {
 class AppReducer: Reducer {
     typealias StateType = AppState
     
-    func handleAction(state: AppState, actionType: ActionType) -> AppState {
+    func handleAction(action: ActionType, state: AppState) -> AppState {
         var newState = state
         
-        switch(actionType) {
-        /*case is InitAction:
+        switch(action) {
+        case is InitAction:
             let appState = AppState()
             appState.someText = "default"
             appState.switch1 = false
             appState.switch2 = true
             
             newState = appState
-            break*/
+            break
             
         case is Switch1Action:
-            newState = SwitchReducer().handleAction(state, actionType: actionType) as! StateType
+            newState = SwitchReducer().handleAction(action, state: state) as! StateType
             
         case is Switch2Action:
-            newState = SwitchReducer().handleAction(state, actionType: actionType) as! StateType
+            newState = SwitchReducer().handleAction(action, state: state) as! StateType
             
         case is TextAction:
-            newState = TextReducer().handleAction(state, actionType: actionType) as! StateType
+            newState = TextReducer().handleAction(action, state: state) as! StateType
             
         default:
             break
