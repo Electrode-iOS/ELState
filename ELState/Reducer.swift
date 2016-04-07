@@ -13,26 +13,21 @@ public protocol BaseReducer: class {
 }
 
 public protocol Reducer: BaseReducer {
-    associatedtype StateType: State
+    associatedtype StateType
 
     func handleAction(state: StateType, actionType: ActionType) -> StateType
 }
 
 public extension Reducer {
     public func _handleAction(state: State?, actionType: ActionType) -> State? {
-        var thisState: StateType
-        
-        if state == nil {
-            thisState = StateType()
-        } else {
+        if state != nil {
             if let aState = state as? StateType {
-                thisState = aState
-            } else {
-                return nil
+                let thisState = aState
+                let result = handleAction(thisState, actionType: actionType) as? State
+                return result
             }
         }
         
-        let result = handleAction(thisState, actionType: actionType)
-        return result
+        return nil
     }
 }

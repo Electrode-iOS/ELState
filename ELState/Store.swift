@@ -8,9 +8,8 @@
 
 import Foundation
 
-//@objc
-public protocol State: AnyObject {
-    
+public protocol State {
+ 
 }
 
 @objc
@@ -22,8 +21,9 @@ public class Store: NSObject {
         }
     }
     
-    public init(reducer: BaseReducer) {
+    public init(state: State, reducer: BaseReducer) {
         self.reducer = reducer
+        self._state = state
         super.init()
         
         // Dispatch the InitAction so everyone puts in their default state.

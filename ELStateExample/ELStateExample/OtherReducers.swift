@@ -9,7 +9,7 @@
 import Foundation
 import ELState
 
-protocol HasSwitchStates: State {
+public protocol HasSwitchStates: State {
     var switch1: Bool { get set }
     var switch2: Bool { get set }
 }
@@ -18,7 +18,7 @@ class SwitchReducer: Reducer {
     typealias StateType = HasSwitchStates
     
     func handleAction(state: StateType, actionType: ActionType) -> StateType {
-        let newState = state
+        var newState = state
         
         switch(actionType) {
         case is InitAction:
@@ -51,7 +51,7 @@ class TextReducer: Reducer {
     typealias StateType = HasTextState
     
     func handleAction(state: StateType, actionType: ActionType) -> StateType {
-        let newState = state
+        var newState = state
         
         switch(actionType) {
         case is InitAction:

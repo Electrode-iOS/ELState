@@ -10,7 +10,7 @@ import Foundation
 import ELState
 
 
-public class AppState: State, HasSwitchStates, HasTextState {
+class AppState: State, HasSwitchStates, HasTextState {
     var switch1: Bool = false
     var switch2: Bool = false
     var someText: String = ""
@@ -23,14 +23,14 @@ class AppReducer: Reducer {
         var newState = state
         
         switch(actionType) {
-        case is InitAction:
+        /*case is InitAction:
             let appState = AppState()
             appState.someText = "default"
             appState.switch1 = false
             appState.switch2 = true
             
             newState = appState
-            break
+            break*/
             
         case is Switch1Action:
             newState = SwitchReducer().handleAction(state, actionType: actionType) as! StateType
