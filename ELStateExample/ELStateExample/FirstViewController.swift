@@ -27,7 +27,7 @@ class FirstViewController: UIViewController, Subscriber {
         // Dispose of any resources that can be recreated.
     }
     
-    func newState(state: State, store: Store) {
+    func newState(state: HasTextState, store: Store) {
         guard let state = state as? AppState else {
             return
         }

@@ -10,7 +10,6 @@ import UIKit
 import ELState
 
 class SecondViewController: UIViewController, Subscriber {
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,7 +25,7 @@ class SecondViewController: UIViewController, Subscriber {
         // Dispose of any resources that can be recreated.
     }
     
-    func newState(state: State, store: Store) {
+    func newState(state: HasSwitchStates, store: Store) {
         guard let state = state as? AppState else {
             return
         }

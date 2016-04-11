@@ -26,14 +26,14 @@ public class Store: NSObject {
         dispatch(InitAction())
     }
     
-    public func subscribe(s: Subscriber) {
+    public func subscribe(s: BaseSubscriber) {
         listeners.append(s)
         if let currentState = state {
-            s.newState(currentState, store: self)
+            s._newState(currentState, store: self)
         }
     }
     
-    public func unsubscribe(s: Subscriber) {
+    public func unsubscribe(s: BaseSubscriber) {
         //listeners = listeners.filter({ $0 != s })
     }
     
@@ -53,7 +53,7 @@ public class Store: NSObject {
         if let state = state {
             let currentListeners = listeners
             currentListeners.forEach {
-                $0.newState(state, store: self)
+                $0._newState(state, store: self)
             }
         }
         
@@ -67,7 +67,7 @@ public class Store: NSObject {
     
     // we want a weak hold on any listeners in case they forget
     // to unsubscribe.
-    private var listeners = [Subscriber]()//NSHashTable.weakObjectsHashTable()
+    private var listeners = [BaseSubscriber]()//NSHashTable.weakObjectsHashTable()
     // the main reducer for the application.
     private var reducer: BaseReducer
 

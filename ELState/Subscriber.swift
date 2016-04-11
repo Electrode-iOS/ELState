@@ -8,7 +8,18 @@
 
 import Foundation
 
-//@objc
-public protocol Subscriber {
-    func newState(state: State, store: Store)
+public protocol BaseSubscriber {
+    func _newState(state: State, store: Store)
+}
+
+public protocol Subscriber: BaseSubscriber {
+    associatedtype StateType
+    
+    func newState(state: StateType, store: Store)
+}
+
+public extension Subscriber {
+    func _newState(state: State, store: Store) {
+        newState(state as! StateType, store: store)
+    }
 }

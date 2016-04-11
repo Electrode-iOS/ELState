@@ -12,16 +12,18 @@ import ELState
 public var appStore: Store? = nil
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, StoreOwner {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, StoreOwner, Subscriber {
     var window: UIWindow?
     var store: Store?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        store = Store(state: AppState(), reducer: AppReducer())
+        store = Store(state: AppState(), reducer: CombineReducers([SwitchReducer(), TextReducer()]))
         appStore = store
+        
+        appStore?.subscribe(self)
+        
         return true
     }
 
@@ -47,6 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, StoreOwner {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // print out the new state as it comes in.
+    func newState(state: AppState, store: Store) {
+        print("State = {\ntext: \(state.someText)\nswitch1: \(state.switch1)\nswitch2: \(state.switch2)\n}")
+    }
 
 }
 

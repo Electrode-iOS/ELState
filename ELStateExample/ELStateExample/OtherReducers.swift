@@ -15,9 +15,7 @@ public protocol HasSwitchStates: State {
 }
 
 class SwitchReducer: Reducer {
-    typealias StateType = HasSwitchStates
-    
-    func handleAction(action: ActionType, state: StateType) -> StateType {
+    func handleAction(action: ActionType, state: HasSwitchStates) -> HasSwitchStates {
         var newState = state
         
         switch(action) {
@@ -48,9 +46,7 @@ protocol HasTextState: State {
 }
 
 class TextReducer: Reducer {
-    typealias StateType = HasTextState
-    
-    func handleAction(action: ActionType, state: StateType) -> StateType {
+    func handleAction(action: ActionType, state: HasTextState) -> HasTextState {
         var newState = state
         
         switch(action) {
