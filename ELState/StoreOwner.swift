@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol StoreOwner {
-    var store: Store? { get }
+    var store: Store { get }
 }

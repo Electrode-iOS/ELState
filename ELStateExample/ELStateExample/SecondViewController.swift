@@ -13,11 +13,11 @@ class SecondViewController: UIViewController, Subscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        appStore?.subscribe(self)
+        UIApplication.store.subscribe(self)
     }
     
     deinit {
-        appStore?.unsubscribe(self)
+        UIApplication.store.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,11 +38,11 @@ class SecondViewController: UIViewController, Subscriber {
     @IBOutlet weak var switch2: UISwitch!
     
     @IBAction func switch1Changed(sender: AnyObject) {
-        appStore?.dispatch(Switch1Action(data: switch1.on))
+        UIApplication.store.dispatch(Switch1Action(data: switch1.on))
     }
     
     @IBAction func switch2Changed(sender: AnyObject) {
-        appStore?.dispatch(Switch2Action(data: switch2.on))
+        UIApplication.store.dispatch(Switch2Action(data: switch2.on))
     }
 }
 

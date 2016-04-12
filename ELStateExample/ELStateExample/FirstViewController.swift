@@ -15,11 +15,11 @@ class FirstViewController: UIViewController, Subscriber {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        appStore?.subscribe(self)
+        UIApplication.store.subscribe(self)
     }
     
     deinit {
-        appStore?.unsubscribe(self)
+        UIApplication.store.unsubscribe(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +38,7 @@ class FirstViewController: UIViewController, Subscriber {
 
     @IBAction func textChangedAction(sender: AnyObject) {
         let text = textField.text
-        appStore?.dispatch(TextAction(data: text))
+        UIApplication.store.dispatch(TextAction(data: text))
     }
     
     @IBAction func doneAction(sender: AnyObject) {
@@ -46,13 +46,13 @@ class FirstViewController: UIViewController, Subscriber {
     }
     
     @IBAction func toggleSwitchesAction(sender: AnyObject) {
-        if let state = appStore?.state as? AppState {
-            let switch1 = !state.switch1
-            let switch2 = !state.switch2
-            
-            appStore?.dispatch(Switch1Action(data: switch1))
-            appStore?.dispatch(Switch2Action(data: switch2))
-        }
+        let state = UIApplication.store.state as? AppState
+        
+        let switch1 = !state!.switch1
+        let switch2 = !state!.switch2
+        
+        UIApplication.store.dispatch(Switch1Action(data: switch1))
+        UIApplication.store.dispatch(Switch2Action(data: switch2))
     }
 }
 

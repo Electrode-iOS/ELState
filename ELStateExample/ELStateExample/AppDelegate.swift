@@ -9,20 +9,15 @@
 import UIKit
 import ELState
 
-public var appStore: Store? = nil
-
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, StoreOwner, Subscriber {
+class AppDelegate: UIResponder, UIApplicationDelegate, Subscriber {
     var window: UIWindow?
-    var store: Store?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        store = Store(state: AppState(), reducer: CombineReducers([SwitchReducer(), TextReducer()]))
-        appStore = store
-        
-        appStore?.subscribe(self)
+        application.store = Store(state: AppState(), reducer: CombineReducers([SwitchReducer(), TextReducer()]))
+        application.store.subscribe(self)
         
         return true
     }

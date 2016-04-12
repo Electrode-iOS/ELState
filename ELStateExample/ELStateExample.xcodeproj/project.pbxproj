@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA507A141CBDA2D500E959EB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA507A131CBDA2D500E959EB /* ThirdViewController.swift */; };
 		CA69BCF31CA7DDDD00204B18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCF21CA7DDDD00204B18 /* AppDelegate.swift */; };
 		CA69BCF51CA7DDDD00204B18 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCF41CA7DDDD00204B18 /* FirstViewController.swift */; };
 		CA69BCF71CA7DDDD00204B18 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCF61CA7DDDD00204B18 /* SecondViewController.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CA507A131CBDA2D500E959EB /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		CA69BCEF1CA7DDDD00204B18 /* ELStateExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELStateExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA69BCF21CA7DDDD00204B18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA69BCF41CA7DDDD00204B18 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				CA69BD341CA7E6E200204B18 /* Actions.swift */,
 				CA69BCF41CA7DDDD00204B18 /* FirstViewController.swift */,
 				CA69BCF61CA7DDDD00204B18 /* SecondViewController.swift */,
+				CA507A131CBDA2D500E959EB /* ThirdViewController.swift */,
 				CA69BCF81CA7DDDD00204B18 /* Main.storyboard */,
 				CA69BCFB1CA7DDDD00204B18 /* Assets.xcassets */,
 				CA69BCFD1CA7DDDD00204B18 /* LaunchScreen.storyboard */,
@@ -345,6 +348,7 @@
 				CA69BCF71CA7DDDD00204B18 /* SecondViewController.swift in Sources */,
 				CA69BD351CA7E6E200204B18 /* Actions.swift in Sources */,
 				CA69BCF31CA7DDDD00204B18 /* AppDelegate.swift in Sources */,
+				CA507A141CBDA2D500E959EB /* ThirdViewController.swift in Sources */,
 				CA69BD311CA7DE4C00204B18 /* AppState.swift in Sources */,
 				CA69BD331CA7E10700204B18 /* OtherReducers.swift in Sources */,
 				CA69BCF51CA7DDDD00204B18 /* FirstViewController.swift in Sources */,
