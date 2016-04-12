@@ -17,7 +17,7 @@
 		CA69BD151CA7DDDD00204B18 /* ELStateExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BD141CA7DDDD00204B18 /* ELStateExampleUITests.swift */; };
 		CA69BD2B1CA7DE0500204B18 /* ELState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA69BD281CA7DDEA00204B18 /* ELState.framework */; };
 		CA69BD2C1CA7DE0500204B18 /* ELState.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CA69BD281CA7DDEA00204B18 /* ELState.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CA69BD311CA7DE4C00204B18 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BD301CA7DE4C00204B18 /* AppReducer.swift */; };
+		CA69BD311CA7DE4C00204B18 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BD301CA7DE4C00204B18 /* AppState.swift */; };
 		CA69BD331CA7E10700204B18 /* OtherReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BD321CA7E10700204B18 /* OtherReducers.swift */; };
 		CA69BD351CA7E6E200204B18 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BD341CA7E6E200204B18 /* Actions.swift */; };
 /* End PBXBuildFile section */
@@ -90,7 +90,7 @@
 		CA69BD141CA7DDDD00204B18 /* ELStateExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELStateExampleUITests.swift; sourceTree = "<group>"; };
 		CA69BD161CA7DDDD00204B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA69BD221CA7DDEA00204B18 /* ELState.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ELState.xcodeproj; path = ../ELState.xcodeproj; sourceTree = "<group>"; };
-		CA69BD301CA7DE4C00204B18 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		CA69BD301CA7DE4C00204B18 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		CA69BD321CA7E10700204B18 /* OtherReducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherReducers.swift; sourceTree = "<group>"; };
 		CA69BD341CA7E6E200204B18 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,7 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				CA69BCF21CA7DDDD00204B18 /* AppDelegate.swift */,
-				CA69BD301CA7DE4C00204B18 /* AppReducer.swift */,
+				CA69BD301CA7DE4C00204B18 /* AppState.swift */,
 				CA69BD321CA7E10700204B18 /* OtherReducers.swift */,
 				CA69BD341CA7E6E200204B18 /* Actions.swift */,
 				CA69BCF41CA7DDDD00204B18 /* FirstViewController.swift */,
@@ -345,7 +345,7 @@
 				CA69BCF71CA7DDDD00204B18 /* SecondViewController.swift in Sources */,
 				CA69BD351CA7E6E200204B18 /* Actions.swift in Sources */,
 				CA69BCF31CA7DDDD00204B18 /* AppDelegate.swift in Sources */,
-				CA69BD311CA7DE4C00204B18 /* AppReducer.swift in Sources */,
+				CA69BD311CA7DE4C00204B18 /* AppState.swift in Sources */,
 				CA69BD331CA7E10700204B18 /* OtherReducers.swift in Sources */,
 				CA69BCF51CA7DDDD00204B18 /* FirstViewController.swift in Sources */,
 			);
