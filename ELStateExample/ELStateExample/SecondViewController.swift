@@ -26,10 +26,6 @@ class SecondViewController: UIViewController, Subscriber {
     }
     
     func newState(state: HasSwitchStates, store: Store) {
-        guard let state = state as? AppState else {
-            return
-        }
-        
         switch1.on = state.switch1
         switch2.on = state.switch2
     }

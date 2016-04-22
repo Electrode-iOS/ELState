@@ -28,9 +28,6 @@ class FirstViewController: UIViewController, Subscriber {
     }
     
     func newState(state: HasTextState, store: Store) {
-        guard let state = state as? AppState else {
-            return
-        }
         textField.text = state.someText
     }
 
@@ -46,7 +43,7 @@ class FirstViewController: UIViewController, Subscriber {
     }
     
     @IBAction func toggleSwitchesAction(sender: AnyObject) {
-        let state = UIApplication.store.state as? AppState
+        let state = UIApplication.store.state as? HasSwitchStates
         
         let switch1 = !state!.switch1
         let switch2 = !state!.switch2
