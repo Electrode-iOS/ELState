@@ -109,7 +109,7 @@ extension UIApplication: StoreOwner {
             return __applicationStore!
         }
         set(value) {
-            if __applicationStore != nil {
+            if __applicationStore == nil {
                 __applicationStore = value
             } else {
                 assertionFailure("The main state store has already been set!")
