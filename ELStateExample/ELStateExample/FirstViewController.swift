@@ -16,6 +16,8 @@ class FirstViewController: UIViewController, Subscriber {
         // Do any additional setup after loading the view, typically from a nib.
         
         UIApplication.store.subscribe(self)
+        
+        textField.addTarget(self, action: #selector(textChangedAction), forControlEvents: .AllEditingEvents)
     }
     
     deinit {
@@ -33,7 +35,7 @@ class FirstViewController: UIViewController, Subscriber {
 
     @IBOutlet weak var textField: UITextField!
 
-    @IBAction func textChangedAction(sender: AnyObject) {
+    func textChangedAction(sender: AnyObject) {
         let text = textField.text
         UIApplication.store.dispatch(TextAction(data: text!))
     }
