@@ -37,7 +37,7 @@ public class Store: NSObject {
         listeners.removeObject(s)
     }
     
-    public func dispatch(action: ActionType) {
+    public func dispatch(action: AnyAction) {
         // this should only catch if a reducer attempts to dispatch an action.
         if isDispatching {
             assertionFailure("Reducers cannot dispatch actions!")
@@ -61,7 +61,7 @@ public class Store: NSObject {
         isDispatching = false
     }
 
-    public func dispatchAsync(action: ActionType) {
+    public func dispatchAsync(action: AnyAction) {
         // this should only catch if a reducer attempts to dispatch an action.
         if isDispatching {
             assertionFailure("Reducers cannot dispatch actions!")

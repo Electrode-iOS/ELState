@@ -8,7 +8,9 @@
 
 import Foundation
 
-public protocol ActionType {
+public protocol AnyAction {}
+
+public protocol ActionType: AnyAction {
     var data: Any { get }
 }
 

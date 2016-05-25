@@ -15,7 +15,7 @@ public class CombineReducers: BaseReducer {
         self.reducers = reducers
     }
     
-    public func _handleAction(action: ActionType, state: State?) -> State? {
+    public func _handleAction(action: AnyAction, state: State?) -> State? {
         var newState = state
         
         for item in reducers {
