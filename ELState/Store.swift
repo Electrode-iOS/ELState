@@ -38,56 +38,25 @@ public class Store: NSObject {
     }
     
     public func dispatch(action: AnyAction) {
-        // this should only catch if a reducer attempts to dispatch an action.
-        if isDispatching {
-            assertionFailure("Reducers cannot dispatch actions!")
-            return
-        }
-        
-        // go into dispatch mode.
-        isDispatching = true
-        
-        // get the state
-        _state = reducer._handleAction(action, state: state)
-        // dispatch it to all subscribers.
-        if let state = state {
-            let enumerator = listeners.objectEnumerator()
-            while let listener = enumerator.nextObject() as? BaseSubscriber {
-                listener._newState(state, store: self)
+        dispatch_async(dispatchQueue) { [weak self] in
+            guard let strongSelf = self else { return }
+            // get the state
+            strongSelf._state = strongSelf.reducer._handleAction(action, state: strongSelf.state)
+            // dispatch it to all subscribers, and on the  main thread.
+            dispatch_async(dispatch_get_main_queue()) {
+                if let state = strongSelf.state {
+                    let enumerator = strongSelf.listeners.objectEnumerator()
+                    while let listener = enumerator.nextObject() as? BaseSubscriber {
+                        listener._newState(state, store: strongSelf)
+                    }
+                }
             }
         }
-        
-        // we're done, turn it off
-        isDispatching = false
-    }
-
-    public func dispatchAsync(action: AnyAction) {
-        // this should only catch if a reducer attempts to dispatch an action.
-        if isDispatching {
-            assertionFailure("Reducers cannot dispatch actions!")
-            return
-        }
-        
-        // go into dispatch mode.
-        isDispatching = true
-        
-        // get the state
-        _state = reducer._handleAction(action, state: state)
-        // dispatch it to all subscribers.
-        if let state = state {
-            let enumerator = listeners.objectEnumerator()
-            while let listener = enumerator.nextObject() as? BaseSubscriber {
-                listener._newState(state, store: self)
-            }
-        }
-        
-        // we're done, turn it off
-        isDispatching = false
     }
 
     private var _state: State? = nil
-    // TODO: Make this atomic?
-    private var isDispatching: Bool = false
+
+    private let dispatchQueue = dispatch_queue_create("electrode.elstate", DISPATCH_QUEUE_SERIAL)
     
     // we want a weak hold on any listeners in case they forget
     // to unsubscribe.
