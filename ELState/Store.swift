@@ -37,7 +37,7 @@ public class Store: NSObject {
         listeners.removeObject(s)
     }
     
-    public func dispatch(action: ActionType) {
+    public func dispatch(action: AnyAction) {
         dispatch_async(dispatchQueue) { [weak self] in
             guard let strongSelf = self else { return }
             // get the state
