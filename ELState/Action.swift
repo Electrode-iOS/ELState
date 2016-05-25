@@ -8,10 +8,8 @@
 
 import Foundation
 
-public protocol ActionType {
-    var data: Any { get }
-}
+/// Base protocol from which all Actions should derive.
+public protocol Action { }
 
-public struct InitAction: ActionType {
-    public var data: Any { return "" }
-}
+/// Do nothing, just instructs the reducer to initialize it's state.
+public struct InitAction: Action { }

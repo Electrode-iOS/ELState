@@ -35,7 +35,7 @@ class FirstViewController: UIViewController, Subscriber {
 
     @IBAction func textChangedAction(sender: AnyObject) {
         let text = textField.text
-        UIApplication.store.dispatch(TextAction(data: text))
+        UIApplication.store.dispatch(TextAction(data: text!))
     }
     
     @IBAction func doneAction(sender: AnyObject) {

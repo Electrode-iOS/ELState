@@ -9,17 +9,17 @@
 import Foundation
 
 public protocol BaseReducer: class {
-    func _handleAction(action: ActionType, state: State?) -> State?
+    func _handleAction(action: Action, state: State?) -> State?
 }
 
 public protocol Reducer: BaseReducer {
     associatedtype StateType
 
-    func handleAction(action: ActionType, state: StateType) -> StateType
+    func handleAction(action: Action, state: StateType) -> StateType
 }
 
 public extension Reducer {
-    public func _handleAction(action: ActionType, state: State?) -> State? {
+    public func _handleAction(action: Action, state: State?) -> State? {
         if state != nil {
             if let aState = state as? StateType {
                 let thisState = aState

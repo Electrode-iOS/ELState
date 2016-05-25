@@ -9,14 +9,14 @@
 import Foundation
 import ELState
 
-struct Switch1Action: ActionType {
-    var data: Any
+struct Switch1Action: Action {
+    var data: Bool
 }
 
-struct Switch2Action: ActionType {
-    var data: Any
+struct Switch2Action: Action {
+    var data: Bool
 }
 
-struct TextAction: ActionType {
-    var data: Any
+struct TextAction: Action {
+    var data: String
 }

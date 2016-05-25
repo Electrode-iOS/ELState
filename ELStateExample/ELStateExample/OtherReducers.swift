@@ -15,7 +15,7 @@ public protocol HasSwitchStates: State {
 }
 
 class SwitchReducer: Reducer {
-    func handleAction(action: ActionType, state: HasSwitchStates) -> HasSwitchStates {
+    func handleAction(action: Action, state: HasSwitchStates) -> HasSwitchStates {
         var newState = state
         
         switch(action) {
@@ -24,12 +24,12 @@ class SwitchReducer: Reducer {
             newState.switch2 = false
             break
             
-        case is Switch1Action:
-            newState.switch1 = (action.data as! Bool)
+        case let action as Switch1Action:
+            newState.switch1 = action.data
             break
 
-        case is Switch2Action:
-            newState.switch2 = (action.data as! Bool)
+        case let action as Switch2Action:
+            newState.switch2 = action.data
             break
             
             
@@ -46,14 +46,14 @@ protocol HasTextState: State {
 }
 
 class TextReducer: Reducer {
-    func handleAction(action: ActionType, state: HasTextState) -> HasTextState {
+    func handleAction(action: Action, state: HasTextState) -> HasTextState {
         var newState = state
         
         switch(action) {
         case is InitAction:
             newState.someText = ""
-        case is TextAction:
-            newState.someText = action.data as! String
+        case let action as TextAction:
+            newState.someText = action.data
             break
             
         default:
