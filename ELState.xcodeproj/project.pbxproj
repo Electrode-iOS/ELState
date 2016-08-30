@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		178DA9281D75D6E000B873C8 /* ELStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178DA9271D75D6E000B873C8 /* ELStateTests.swift */; };
-		178DA92A1D75D6E000B873C8 /* ELState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA69BCC01CA7BBD300204B18 /* ELState.framework */; };
 		CA69BCC41CA7BBD300204B18 /* ELState.h in Headers */ = {isa = PBXBuildFile; fileRef = CA69BCC31CA7BBD300204B18 /* ELState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA69BCDB1CA7BBF800204B18 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDA1CA7BBF800204B18 /* Action.swift */; };
 		CA69BCDD1CA7BCC000204B18 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */; };
@@ -19,25 +17,10 @@
 		CAD232B71CB6DA0100BBA021 /* CombineReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD232B61CB6DA0100BBA021 /* CombineReducers.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		178DA92B1D75D6E000B873C8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA69BCB71CA7BBD300204B18 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA69BCBF1CA7BBD300204B18;
-			remoteInfo = ELState;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		178DA9251D75D6E000B873C8 /* ELStateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELStateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		178DA9271D75D6E000B873C8 /* ELStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELStateTests.swift; sourceTree = "<group>"; };
-		178DA9291D75D6E000B873C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA69BCC01CA7BBD300204B18 /* ELState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ELState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA69BCC31CA7BBD300204B18 /* ELState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELState.h; sourceTree = "<group>"; };
 		CA69BCC51CA7BBD300204B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CA69BCCF1CA7BBD300204B18 /* ELStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELStateTests.swift; sourceTree = "<group>"; };
-		CA69BCD11CA7BBD300204B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA69BCDA1CA7BBF800204B18 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscriber.swift; sourceTree = "<group>"; };
 		CA69BCDE1CA7BD5A00204B18 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
@@ -48,14 +31,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		178DA9221D75D6E000B873C8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				178DA92A1D75D6E000B873C8 /* ELState.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CA69BCBC1CA7BBD300204B18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,21 +41,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		178DA9261D75D6E000B873C8 /* ELStateTests */ = {
-			isa = PBXGroup;
-			children = (
-				178DA9271D75D6E000B873C8 /* ELStateTests.swift */,
-				178DA9291D75D6E000B873C8 /* Info.plist */,
-			);
-			path = ELStateTests;
-			sourceTree = "<group>";
-		};
 		CA69BCB61CA7BBD300204B18 = {
 			isa = PBXGroup;
 			children = (
 				CA69BCC21CA7BBD300204B18 /* ELState */,
-				CA69BCCE1CA7BBD300204B18 /* ELStateTests */,
-				178DA9261D75D6E000B873C8 /* ELStateTests */,
 				CA69BCC11CA7BBD300204B18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -89,7 +53,6 @@
 			isa = PBXGroup;
 			children = (
 				CA69BCC01CA7BBD300204B18 /* ELState.framework */,
-				178DA9251D75D6E000B873C8 /* ELStateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,15 +73,6 @@
 			path = ELState;
 			sourceTree = "<group>";
 		};
-		CA69BCCE1CA7BBD300204B18 /* ELStateTests */ = {
-			isa = PBXGroup;
-			children = (
-				CA69BCCF1CA7BBD300204B18 /* ELStateTests.swift */,
-				CA69BCD11CA7BBD300204B18 /* Info.plist */,
-			);
-			path = ELStateTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -133,24 +87,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		178DA9241D75D6E000B873C8 /* ELStateTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 178DA92D1D75D6E000B873C8 /* Build configuration list for PBXNativeTarget "ELStateTests" */;
-			buildPhases = (
-				178DA9211D75D6E000B873C8 /* Sources */,
-				178DA9221D75D6E000B873C8 /* Frameworks */,
-				178DA9231D75D6E000B873C8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				178DA92C1D75D6E000B873C8 /* PBXTargetDependency */,
-			);
-			name = ELStateTests;
-			productName = ELStateTests;
-			productReference = 178DA9251D75D6E000B873C8 /* ELStateTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		CA69BCBF1CA7BBD300204B18 /* ELState */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA69BCD41CA7BBD300204B18 /* Build configuration list for PBXNativeTarget "ELState" */;
@@ -179,9 +115,6 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Electrode-iOS";
 				TargetAttributes = {
-					178DA9241D75D6E000B873C8 = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 					CA69BCBF1CA7BBD300204B18 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -200,19 +133,11 @@
 			projectRoot = "";
 			targets = (
 				CA69BCBF1CA7BBD300204B18 /* ELState */,
-				178DA9241D75D6E000B873C8 /* ELStateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		178DA9231D75D6E000B873C8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CA69BCBE1CA7BBD300204B18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,14 +148,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		178DA9211D75D6E000B873C8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				178DA9281D75D6E000B873C8 /* ELStateTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CA69BCBB1CA7BBD300204B18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -247,45 +164,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		178DA92C1D75D6E000B873C8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA69BCBF1CA7BBD300204B18 /* ELState */;
-			targetProxy = 178DA92B1D75D6E000B873C8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		178DA92E1D75D6E000B873C8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ELStateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		178DA92F1D75D6E000B873C8 /* QADeployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ELStateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = QADeployment;
-		};
-		178DA9301D75D6E000B873C8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = ELStateTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		CA69BCD21CA7BBD300204B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -489,15 +368,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		178DA92D1D75D6E000B873C8 /* Build configuration list for PBXNativeTarget "ELStateTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				178DA92E1D75D6E000B873C8 /* Debug */,
-				178DA92F1D75D6E000B873C8 /* QADeployment */,
-				178DA9301D75D6E000B873C8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
 		CA69BCBA1CA7BBD300204B18 /* Build configuration list for PBXProject "ELState" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
