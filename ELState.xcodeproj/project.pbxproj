@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178976F31D75E7F700207023 /* ELStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178976F21D75E7F700207023 /* ELStateTests.swift */; };
+		178976F51D75E7F800207023 /* ELState.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA69BCC01CA7BBD300204B18 /* ELState.framework */; };
 		CA69BCC41CA7BBD300204B18 /* ELState.h in Headers */ = {isa = PBXBuildFile; fileRef = CA69BCC31CA7BBD300204B18 /* ELState.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA69BCDB1CA7BBF800204B18 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDA1CA7BBF800204B18 /* Action.swift */; };
 		CA69BCDD1CA7BCC000204B18 /* Subscriber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA69BCDC1CA7BCC000204B18 /* Subscriber.swift */; };
@@ -17,7 +19,20 @@
 		CAD232B71CB6DA0100BBA021 /* CombineReducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD232B61CB6DA0100BBA021 /* CombineReducers.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		178976F61D75E7F800207023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA69BCB71CA7BBD300204B18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA69BCBF1CA7BBD300204B18;
+			remoteInfo = ELState;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		178976F01D75E7F700207023 /* ELStateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELStateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		178976F21D75E7F700207023 /* ELStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELStateTests.swift; sourceTree = "<group>"; };
+		178976F41D75E7F800207023 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA69BCC01CA7BBD300204B18 /* ELState.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ELState.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA69BCC31CA7BBD300204B18 /* ELState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ELState.h; sourceTree = "<group>"; };
 		CA69BCC51CA7BBD300204B18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -31,6 +46,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		178976ED1D75E7F700207023 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178976F51D75E7F800207023 /* ELState.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA69BCBC1CA7BBD300204B18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,10 +64,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		178976F11D75E7F700207023 /* ELStateTests */ = {
+			isa = PBXGroup;
+			children = (
+				178976F21D75E7F700207023 /* ELStateTests.swift */,
+				178976F41D75E7F800207023 /* Info.plist */,
+			);
+			path = ELStateTests;
+			sourceTree = "<group>";
+		};
 		CA69BCB61CA7BBD300204B18 = {
 			isa = PBXGroup;
 			children = (
 				CA69BCC21CA7BBD300204B18 /* ELState */,
+				178976F11D75E7F700207023 /* ELStateTests */,
 				CA69BCC11CA7BBD300204B18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				CA69BCC01CA7BBD300204B18 /* ELState.framework */,
+				178976F01D75E7F700207023 /* ELStateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +121,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		178976EF1D75E7F700207023 /* ELStateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 178976FB1D75E7F800207023 /* Build configuration list for PBXNativeTarget "ELStateTests" */;
+			buildPhases = (
+				178976EC1D75E7F700207023 /* Sources */,
+				178976ED1D75E7F700207023 /* Frameworks */,
+				178976EE1D75E7F700207023 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				178976F71D75E7F800207023 /* PBXTargetDependency */,
+			);
+			name = ELStateTests;
+			productName = ELStateTests;
+			productReference = 178976F01D75E7F700207023 /* ELStateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		CA69BCBF1CA7BBD300204B18 /* ELState */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA69BCD41CA7BBD300204B18 /* Build configuration list for PBXNativeTarget "ELState" */;
@@ -115,6 +167,9 @@
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Electrode-iOS";
 				TargetAttributes = {
+					178976EF1D75E7F700207023 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					CA69BCBF1CA7BBD300204B18 = {
 						CreatedOnToolsVersion = 7.3;
 					};
@@ -133,11 +188,19 @@
 			projectRoot = "";
 			targets = (
 				CA69BCBF1CA7BBD300204B18 /* ELState */,
+				178976EF1D75E7F700207023 /* ELStateTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		178976EE1D75E7F700207023 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA69BCBE1CA7BBD300204B18 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +211,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		178976EC1D75E7F700207023 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				178976F31D75E7F700207023 /* ELStateTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CA69BCBB1CA7BBD300204B18 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,7 +235,45 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		178976F71D75E7F800207023 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA69BCBF1CA7BBD300204B18 /* ELState */;
+			targetProxy = 178976F61D75E7F800207023 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		178976F81D75E7F800207023 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ELStateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		178976F91D75E7F800207023 /* QADeployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ELStateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = QADeployment;
+		};
+		178976FA1D75E7F800207023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ELStateTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walmart.ELStateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CA69BCD21CA7BBD300204B18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -368,6 +477,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		178976FB1D75E7F800207023 /* Build configuration list for PBXNativeTarget "ELStateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				178976F81D75E7F800207023 /* Debug */,
+				178976F91D75E7F800207023 /* QADeployment */,
+				178976FA1D75E7F800207023 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		CA69BCBA1CA7BBD300204B18 /* Build configuration list for PBXProject "ELState" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

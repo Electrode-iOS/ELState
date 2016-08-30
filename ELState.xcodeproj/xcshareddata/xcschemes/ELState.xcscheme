@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CA69BCC91CA7BBD300204B18"
+               BlueprintIdentifier = "178976EF1D75E7F700207023"
                BuildableName = "ELStateTests.xctest"
                BlueprintName = "ELStateTests"
                ReferencedContainer = "container:ELState.xcodeproj">
