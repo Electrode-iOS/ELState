@@ -12,4 +12,8 @@ import Foundation
 public protocol Action { }
 
 /// Do nothing, just instructs the reducer to initialize it's state.
-public struct InitAction: Action { }
+public struct InitAction: Action {
+    public init() {
+        
+    }
+}
