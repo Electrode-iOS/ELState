@@ -4,3 +4,5 @@
 [![Build Status](https://travis-ci.org/Electrode-iOS/ELState.svg?branch=master)](https://travis-ci.org/Electrode-iOS/ELState)
 
 A state management system, similar to Redux.
+
+**Note:** This framework is no longer being actively maintained and will not be updated for future versions of Swift or iOS.
